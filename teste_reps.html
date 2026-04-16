@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Teste Reps</title></head>
+<body>
+<h3>Teste de Representacoes</h3>
+<select id="repSel" size="10" style="width:400px"><option value="">Carregando...</option></select>
+<p id="status"></p>
+<script>
+const REPS = [{"cod":"67","nome":"1001 REPRESENTACOES COMERCIAIS LTDA","sup":"102"},{"cod":"98","nome":"A CANDIDO DE SOUZA LTDA","sup":"102"},{"cod":"71","nome":"ACKS COMERCIO E REPRES LTDA","sup":"103"},{"cod":"74","nome":"AGUIA MARKETING LTDA","sup":"101"},{"cod":"99","nome":"ALCE REPRES COMERCIAIS LTDA","sup":"101"},{"cod":"102","nome":"ALENCAR MENDES GARATI","sup":"102"},{"cod":"59","nome":"ANTONIO A.N. JR REP. EIRELI-ME","sup":"102"},{"cod":"46","nome":"BORDIN REPRESENTACOES LTDA","sup":"103"},{"cod":"21","nome":"C J SILVA REPRES COML LTDA","sup":"100"},{"cod":"68","nome":"CAMARGO & FRITZEN LTDA","sup":"102"},{"cod":"51","nome":"CARTA BRANCA REPRES LTDA","sup":"103"},{"cod":"20","nome":"CICA REPRESENTACOES LTDA","sup":"100"},{"cod":"54","nome":"COMERCIAL POLIANA E REPR LTDA","sup":"102"},{"cod":"91","nome":"CROMONOX REPRESENTAN\u00c7OES LTDA","sup":"102"},{"cod":"37","nome":"DEGIOVANI REPR COM LTDA","sup":"104"},{"cod":"103","nome":"DIRETO 103 = CUSTODIO M. SILVA","sup":"103"},{"cod":"4","nome":"DIRETO MAYCON SAO PAULO","sup":"109"},{"cod":"999","nome":"DIRETO ORLANDIA","sup":"110"},{"cod":"1","nome":"DIRETO ORLANDIA","sup":"110"},{"cod":"9","nome":"DIRETO PEDRO SAO PAULO","sup":"109"},{"cod":"3","nome":"DIRETO SP EXPORTACAO","sup":"111"},{"cod":"88","nome":"E B DE MESQUITA REPRES DE ALIM LTDA","sup":"101"},{"cod":"78","nome":"EDUARDO ALVES REPR M C LTDA ME","sup":"101"},{"cod":"100","nome":"EDUARDO VALENTINI FILHO","sup":"100"},{"cod":"70","nome":"F FREITAS REPRES LTDA - ME","sup":"103"},{"cod":"93","nome":"F VASCONCELOS REPRESENTACOES LTDA","sup":"102"},{"cod":"5","nome":"FENCE PEDRO JERKOVIC","sup":"111"},{"cod":"38","nome":"FOMENTO REPR COMERCIAIS LTDA","sup":"104"},{"cod":"32","nome":"GAROA REPRESENTACOES COM LTDA","sup":"104"},{"cod":"83","nome":"J AUGUSTO REPR E SERVICOS LTDA","sup":"101"},{"cod":"8","nome":"LADEX SERVICOS DE PAPEIS LTDA","sup":"111"},{"cod":"96","nome":"M A MATOS MAGNO REPRESENTACOES","sup":"102"},{"cod":"26","nome":"M D IND COM E REPRES LTDA","sup":"104"},{"cod":"19","nome":"MARTINS BRANDAO REPRES LTDA","sup":"103"},{"cod":"22","nome":"PERCHE REPRES LTDA ME","sup":"100"},{"cod":"90","nome":"R. L. REPRESENTACOES EIRELI","sup":"102"},{"cod":"57","nome":"REBRAS REPRESENTACOES LTDA EPP","sup":"102"},{"cod":"52","nome":"REPRESENTACOES MAXIMO LTDA","sup":"103"},{"cod":"87","nome":"RJ VIEIRA REPRESENTACOES LTDA","sup":"101"},{"cod":"45","nome":"SANINO REPRESENTACOES LTDA","sup":"100"},{"cod":"7","nome":"SERGIO RUBERT VALBENY","sup":"111"},{"cod":"66","nome":"SINOS COMERCIO E REPRES LTDA","sup":"102"},{"cod":"41","nome":"SOARES & ROCHA REPRES LTDA ME","sup":"103"},{"cod":"63","nome":"W L F REPRESENTACOES LTDA","sup":"102"}];
+try {
+  const s = document.getElementById("repSel");
+  s.innerHTML = "<option value=''>Selecione</option>";
+  REPS.forEach(r => {
+    const o = document.createElement("option");
+    o.value = r.cod;
+    o.textContent = r.nome;
+    s.appendChild(o);
+  });
+  document.getElementById("status").textContent = "OK: " + REPS.length + " representacoes";
+} catch(e) {
+  document.getElementById("status").textContent = "ERRO: " + e.message;
+}
+</script>
+</body></html>
